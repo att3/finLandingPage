@@ -857,17 +857,73 @@
 
 <!-- Personal Questions Examples -->
 <div class="questions-section">
-  <h2 class="questions-heading">Ask Fin About Your Money</h2>
-  
-  <div class="questions-container">
-    <div class="question-bubble">Have I paid my rent this month?</div>
-    <div class="question-bubble">How much did I spend on takeout last week?</div>
-    <div class="question-bubble">Where am I spending too much?</div>
-    <div class="question-bubble">Can I afford a vacation next month?</div>
-    <div class="question-bubble">How can I improve my credit score?</div>
-    <div class="question-bubble">Should I increase my retirement contributions?</div>
+  <h2 class="questions-heading">What Can Fin Help You With Today?</h2>
+  <div class="question-categories">
+    <button class="category-tab active" data-category="debt">Debt</button>
+    <button class="category-tab" data-category="investing">Investing</button>
+    <button class="category-tab" data-category="budgeting">Budgeting</button>
+    <button class="category-tab" data-category="learning">Learning</button>
+    <button class="category-tab" data-category="taxes">Taxes</button>
+    <button class="category-tab" data-category="goals">Goals</button>
   </div>
+  
+  <div class="questions-container active" id="debt-questions">
+    <div class="question-bubble">How can I get debt-free fastest?</div>
+    <div class="question-bubble">I can't pay my rent this month. Help!</div>
+    <div class="question-bubble">Find me a better loan rate</div>
+    <div class="question-bubble">Which debt should I pay off first?</div>
+    <div class="question-bubble">Did I miss any bill payments?</div>
+    <div class="question-bubble">Help me negotiate with creditors</div>
+  </div>
+  
+  <div class="questions-container" id="investing-questions">
+    <div class="question-bubble">What stocks should I buy?</div>
+    <div class="question-bubble">Is now a good time to invest?</div>
+    <div class="question-bubble">Compare ETFs and mutual funds</div>
+    <div class="question-bubble">Create a retirement plan</div>
+    <div class="question-bubble">Am I on track for retirement?</div>
+    <div class="question-bubble">Build me a balanced portfolio</div>
+  </div>
+  
+  <div class="questions-container" id="budgeting-questions">
+    <div class="question-bubble">Where am I overspending?</div>
+    <div class="question-bubble">Create a monthly budget</div>
+    <div class="question-bubble">Help me save for a house</div>
+    <div class="question-bubble">Can I afford a new car?</div>
+    <div class="question-bubble">Find subscriptions I don't use</div>
+    <div class="question-bubble">Show me spending patterns</div>
+  </div>
+  
+  <div class="questions-container" id="learning-questions">
+    <div class="question-bubble">Explain compound interest</div>
+    <div class="question-bubble">What's the best way to save?</div>
+    <div class="question-bubble">How do tax brackets work?</div>
+    <div class="question-bubble">Should I rent or buy?</div>
+    <div class="question-bubble">Explain 401k vs IRA</div>
+    <div class="question-bubble">What's a good credit score?</div>
+  </div>
+
+    <!-- New Category: Taxes -->
+    <div class="questions-container" id="taxes-questions">
+      <div class="question-bubble">How can I reduce my tax bill?</div>
+      <div class="question-bubble">What tax deductions am I missing?</div>
+      <div class="question-bubble">Should I file jointly or separately?</div>
+      <div class="question-bubble">Estimate my tax refund</div>
+      <div class="question-bubble">How do capital gains taxes work?</div>
+      <div class="question-bubble">Track my tax-deductible expenses</div>
+    </div>
+    
+    <!-- New Category: Financial Goals -->
+    <div class="questions-container" id="goals-questions">
+      <div class="question-bubble">Help me save for my wedding</div>
+      <div class="question-bubble">Create a plan to buy a house in 3 years</div>
+      <div class="question-bubble">Am I saving enough for my child's education?</div>
+      <div class="question-bubble">Set up a vacation fund</div>
+      <div class="question-bubble">Track progress on my emergency fund</div>
+      <div class="question-bubble">Plan for early retirement</div>
+    </div>
 </div>
+
 
 <!-- App Store Links -->
 <div class="app-store-section">
@@ -975,48 +1031,7 @@
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.7);
   }
-  
-  .questions-section {
-    padding: 4rem 1rem;
-    background: radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.05), transparent 50%);
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .questions-heading {
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: #ffffff;
-  }
-  
-  .questions-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .question-bubble {
-    background: rgba(52, 211, 153, 0.1);
-    border: 1px solid rgba(52, 211, 153, 0.2);
-    padding: 0.8rem 1.5rem;
-    border-radius: 100px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .question-bubble:hover {
-    background: rgba(52, 211, 153, 0.2);
-    transform: translateY(-2px);
-  }
+
   
   .app-store-section {
     padding: 5rem 1rem;
@@ -1111,6 +1126,88 @@
     font-size: 0.9rem;
     margin-top: 1rem;
   }
+  .questions-section {
+    padding: 4rem 1rem;
+    background: radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.05), transparent 70%);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .questions-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #ffffff;
+  }
+  
+  .questions-container {
+    display: none; /* Changed from flex to none */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* 2. Add the active class */
+.questions-container.active {
+  display: flex;
+}
+  
+/* 3. Add missing category tab styles */
+.question-categories {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.category-tab {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem 1.25rem;
+  border-radius: 100px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.category-tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.category-tab.active {
+  background: rgba(52, 211, 153, 0.2);
+  border-color: rgba(52, 211, 153, 0.3);
+  color: rgba(255, 255, 255, 0.95);
+}
+
+  .question-bubble {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    padding: 0.8rem 1.5rem;
+    border-radius: 100px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .question-bubble:hover {
+    background: rgba(52, 211, 153, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 211, 153, 0.3);
+  }
+  
+
+
   
   /* Responsive adjustments */
   @media (max-width: 768px) {
@@ -1127,6 +1224,69 @@
       align-items: center;
     }
   }
+  .category-title {
+  background: linear-gradient(135deg, #34d399 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+}
+
+/* Optional animation for smooth transitions */
+.category-title {
+  transition: opacity 0.3s ease;
+}
+
+.category-title::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(135deg, #34d399 0%, #3b82f6 100%);
+  bottom: -5px;
+  left: 0;
+  border-radius: 3px;
+}
+
+/* Optional: Add a subtle animation to draw attention */
+@keyframes pulse-underline {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.category-title::after {
+  animation: pulse-underline 3s infinite ease-in-out;
+}
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    
+    categoryTabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove active class from all tabs
+        categoryTabs.forEach(t => t.classList.remove('active'));
+        
+        // Add active class to clicked tab
+        this.classList.add('active');
+        
+        // Get the category from data attribute
+        const category = this.getAttribute('data-category');
+        
+        // Hide all question containers
+        document.querySelectorAll('.questions-container').forEach(container => {
+          container.classList.remove('active');
+        });
+        
+        // Show the selected category's questions
+        document.getElementById(`${category}-questions`).classList.add('active');
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
